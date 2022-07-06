@@ -1,0 +1,123 @@
+//In Java, Write a program by Usage of Frames and Button Classes.
+import java.awt.*; 
+import java.awt.event.*;
+class button extends Frame implements ActionListener{
+TextField tf; 
+button(){
+tf = new TextField(); 
+tf.setBounds(50,50,150,20); 
+Button b=new Button("click me"); 
+b.setBounds(80,100,80,30);
+b.addActionListener(this);
+add(b);add(tf);
+setSize(250,200);
+setLayout(null);
+setVisible(true);
+} 
+public void actionPerformed(ActionEvent e){ 
+tf.setText("Welcome To AWT"); 
+}
+public static void main(String args[]){ 
+new button();
+}
+}
+// In Java, Write a program by Usage of Frames and Radio Button Classes
+import java.awt.*;
+import java.awt.event.*;
+class radio extends Frame implements ActionListener{
+ Button b = new Button("Get");
+ CheckboxGroup g = new CheckboxGroup();
+Checkbox cpp = new Checkbox("C++",g,false);
+Checkbox j = new Checkbox("Java",g,false);
+Checkbox p = new Checkbox("Python",g,false);
+TextField t = new TextField();
+ radio(){
+cpp.setBounds(50, 80, 50, 25);
+ j.setBounds(100, 80, 50, 25);
+ p.setBounds(160, 80, 50, 25);
+b.setBounds(50, 120, 50, 25);
+t.setBounds(150,120, 50, 25);
+b.addActionListener(this);
+ add(cpp);add(j);add(p);add(b);add(t);
+ setSize(250,250);
+ setLayout(null);
+ setVisible(true);
+ }
+public void actionPerformed(ActionEvent e) {
+if(e.getSource()==b){
+if (cpp.getState()==true){
+t.setText("C++");
+cpp.setState(false);
+}
+if (j.getState()==true){
+t.setText("Java");
+j.setState(false);
+}
+if (p.getState()==true){
+t.setText("Python");
+p.setState(false);
+}
+}
+}
+public static void main(String[] args) {
+new radio();
+}
+}
+//n Java, Write a program by Usage of Frames and List Classes
+import java.awt.*;
+import java.awt.event.*;
+class list extends Frame implements ActionListener{
+Button b = new Button("Get");
+Checkbox cpp = new Checkbox("C++");
+Checkbox j = new Checkbox("Java");
+Checkbox p = new Checkbox("Python");
+List l = new List();
+ list(){
+ cpp.setBounds(50, 80, 50, 25);
+ j.setBounds(100, 80, 50, 25);
+ p.setBounds(160, 80, 50, 25);
+b.setBounds(50, 150, 50, 25);
+l.setBounds(150,130, 50, 60);
+b.addActionListener(this);
+ add(cpp);add(j);add(p);add(b);add(l);
+ setSize(250,250);
+ setLayout(null);
+ setVisible(true);
+ }
+public void actionPerformed(ActionEvent e) {
+if(e.getSource()==b){
+l.removeAll();
+if (cpp.getState()==true){
+l.add("C++");
+cpp.setState(false);
+}
+if (j.getState()==true){
+l.add("Java");
+j.setState(false);
+}
+if (p.getState()==true){
+l.add("Python");
+p.setState(false);
+}
+}
+}
+public static void main(String[] args) {
+new list();
+}
+}
+//n Java, Write a program by Usage of Frames and Text Box Classes
+import java.awt.*;
+public class textarea {
+textarea() {
+Frame f = new Frame();
+TextArea area = new TextArea("Welcome to java");
+area.setBounds(10, 30, 200, 100);
+f.add(area);
+f.setSize(250, 200);
+f.setLayout(null);
+f.setVisible(true);
+}
+public static void main(String args[]) { 
+new textarea(); 
+} 
+}

@@ -1,0 +1,21 @@
+4
+, Write a program by Usage of Frames and Button Classes.
+Write a program by Usage of Frames and Radio Button Classes.
+In Java, Write a program by Usage of Frames and List Classes
+In Java, Write a program by Usage of Frames and Text Box Classes.
+5
+ Write a program by Usage of Frames and Choice Classes.
+ write a program using BorderLayout class.
+ write a program using FlowLayout class
+, write a program using GridLayout class.
+ write a program using CardLayout class
+ write a program Placing a TextField and a Button on a APPLET.
+6
+n Java, write a class named First() to implement an Applet using html tags and run it using 
+appletviewer command [import applet,graphics] and print a text “Welcome to applet” .
+ In Java, write a program to create an array of students using ArrayList class from List 
+Collection interface. 
+ In Java, write a program to create a list of students using LinkedList class from List Collection 
+interface.
+ write a program on sorting students Reg.No. using Map Interface.
+, write a program to print the list of students using Iterator interface.
