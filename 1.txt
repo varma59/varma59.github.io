@@ -1,0 +1,106 @@
+// Program to build a simple calculator using switch Statement
+#include <iostream>
+using namespace std;
+
+int main() {
+    char oper;
+    float num1, num2;
+    cout << "Enter an operator (+, -, *, /): ";
+    cin >> oper;
+    cout << "Enter two numbers: " << endl;
+    cin >> num1 >> num2;
+
+    switch (oper) {
+        case '+':
+            cout << num1 << " + " << num2 << " = " << num1 + num2;
+            break;
+        case '-':
+            cout << num1 << " - " << num2 << " = " << num1 - num2;
+            break;
+        case '*':
+            cout << num1 << " * " << num2 << " = " << num1 * num2;
+            break;
+        case '/':
+            cout << num1 << " / " << num2 << " = " << num1 / num2;
+            break;
+        default:
+            // operator is doesn't match any case constant (+, -, *, /)
+            cout << "Error! The operator is not correct";
+            break;
+    }
+
+    return 0;
+}
+//Constructor
+#include<iostream>
+using namespace std;
+class Employee{
+ public:
+ int id,salary;
+ string empName;
+ Employee(){
+ cout<<"Enter the Id : ";
+ cin>>id;
+ cout<<"Enter the Salary : ";
+ cin>>salary;
+ cout<<"Enter the Name : ";
+ cin>>empName;
+ }
+ Employee(Employee &a){
+ id = a.id;
+ salary = a.salary;
+ empName = a.empName;
+ cout<<"Id : "<<id<<endl;
+ cout<<"Salary : "<<salary<<endl;
+ cout<<"Name : "<<empName<<endl;
+ }
+ ~Employee(){
+ cout<<"Object Terminated!!!";
+ }
+};
+int main(){
+ Employee a;
+ Employee b = a;
+ return 0;
+}
+//Sum(int,int)
+#include<iostream>
+using namespace std;
+class Sum{
+ public:
+ Sum(int a,int b){
+ cout<<a+b<<endl;
+ }
+ Sum(float a,float b){
+ cout<<a+b<<endl;
+ }
+ Sum(double a,double b,double c){
+ cout<<a+b+c<<endl;
+ }
+};
+int main(){
+ Sum a(1,4);
+ Sum b(2.43,5.67);
+ Sum c(19.53652657,34.7328766,27.21321434);
+ return 0;
+}
+//programer
+#include<iostream>
+using namespace std;
+class Account
+{
+   public:
+    float salary = 80000;
+};
+class Programmer: public Account
+{
+   public:
+    float bonus = 6000;
+};
+int main(void)
+{
+  Programmer p1;
+  cout<<"Salary: "<<p1.salary<<endl;
+  cout<<"Bonus: "<<p1.bonus<<endl;
+  return 0;
+}
