@@ -1,0 +1,329 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>Set
+10</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span lang=EN-IN
+style='font-size:14.0pt;line-height:107%'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>create
+table student(sid varchar(10) primary key, sname char(30), address varchar(30),
+mobno varchar(30), agg number, check(agg &gt;= 10));</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>create table book(bid varchar(10) primary  key, bname
+char(30), sid varchar(10), isdate date, vdate date, foreign key(sid) references
+student(sid));</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+lang=EN-IN style='font-size:14.0pt;line-height:107%'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>create
+view viewtitle as select S.sname as Student, S.address, S.mobno as contact from
+student S, book B where B.sid = S.sid and B.bname = 'Database concepts';</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+lang=EN-IN style='font-size:14.0pt;line-height:107%'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>select
+* from book order by isdate;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+lang=EN-IN style='font-size:14.0pt;line-height:107%'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>select
+sname from student s where sid in (select sid from book group by sid having
+count(sid) = 2)</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>here we used having clause to use aggregate conditions and
+also remember to use group by clause</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+lang=EN-IN style='font-size:14.0pt;line-height:107%'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>declare
+</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>rd varchar(30);</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>bd varchar(30);</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>z1 book%rowtype;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>begin</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>rd := :rDat;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>bd := :st;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>select * into z1 from book where bid = bd;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>if (TO_DATE(rd, 'MM/DD/YYYY') - TO_DATE(z1.vdate,
+'MM/DD/YYYY') &gt; 0) then</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>    DBMS_OUTPUT.PUT_LINE('YES');</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>else</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>    DBMS_OUTPUT.PUT_LINE('NO');</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>END IF;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>END;</span></p>
+
+<p class=MsoListParagraphCxSpLast><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>/</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>SET
+9</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span lang=EN-IN
+style='font-size:14.0pt;line-height:107%'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>create
+table train(traino varchar(10), trainname char(20), nos number, tfrom char(10),
+tto char(10), primary key(traino))</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>create table passenger(ticketno varchar(10) primary key, nop
+number, tfare number, dot date, traino varchar(10), rclass varchar(10), foreign
+key(traino) references train(traino),constraint c1 check (rclass = 'sc' or
+rclass = 'ac1' or rclass = 'ac2' or rclass = 'ac3'));</span></p>
+
+<p class=MsoListParagraphCxSpLast><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>SET
+8</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span lang=EN-IN
+style='font-size:14.0pt;line-height:107%'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>create
+table doctor(did varchar(10) primary key, dname char(20), spec char(20), xp
+number, contact char(30));</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>create table patient(pid varchar(10) primary key, pname
+char(30), typ char(10), dtag varchar(10), age number, adm date, foreign
+key(dtag) references doctor(did));</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>alter table patient add constraints f1 check(typ = 'IN' or
+typ = 'OUT');</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+lang=EN-IN style='font-size:14.0pt;line-height:107%'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>create
+view v1 as (select P.pid, P.pname from patient P, Doctor D where P.dtag = D.did
+and (to_date('12-31-2022', 'MM-DD-YYYY') - to_date(P.ADM, 'MM-DD-YYYY') &gt;
+30) and D.SPEC = 'ORTHO')</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>select * from v1</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'><span lang=EN-IN
+style='font-size:14.0pt;line-height:107%'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>select
+pid, pname, adm from patient order by adm</span></p>
+
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span lang=EN-IN
+style='font-size:14.0pt;line-height:107%'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>select
+D.did, D.dname from doctor D where D.did in (select dtag from patient group by
+dtag having count(pid) = 2)</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+lang=EN-IN style='font-size:14.0pt;line-height:107%'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>alter
+table doctor add salary number</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>begin</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>update doctor set salary = 40000 where spec = 'ortho' and xp
+&gt; 5;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>update doctor set salary = 69000 where spec = 'pedia' and xp
+&gt; 5;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>end;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>/</span></p>
+
+<p class=MsoListParagraphCxSpLast><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
