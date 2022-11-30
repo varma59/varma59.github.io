@@ -1,0 +1,99 @@
+
+
+Week-2
+
+1) AIM: How do you implement Breadth First Search in python?
+
+    graph = {
+      's' : ['a','b','c'],
+      'a' : ['d'],
+      'b' : ['d'],
+      'c' : ['d'],
+      'd' : []
+    }
+
+    visited = [] 
+    queue = []    
+
+    def bfs(visited, graph, node):
+      visited.append(node)
+      queue.append(node)
+
+      while queue:
+        m = queue.pop(0) 
+        print (m, end = " ") 
+
+        for neighbour in graph[m]:
+          if neighbour not in visited:
+            visited.append(neighbour)
+            queue.append(neighbour)
+    bfs(visited, graph, 's')
+
+    s a b c d 
+
+INFERENCE: Breadth-First Search is a very useful algorithm, which is
+used to traverse the Trees/Graphs and ensures that we explore the
+closest neighbours first, and then their neighbours, and so on. We have
+seen its working, its algorithm and its applications in many real-life
+use cases.
+
+Advantages: 1.The solution will definitely found out by BFS If there is
+some solution. 2.BFS will never get trapped in a blind alley, which
+means unwanted nodes. 3.If there is more than one solution then it will
+find a solution with minimal steps.
+
+Disadvantages: 1.Memory Constraints As it stores all the nodes of the
+present level to go for the next level. 2.If a solution is far away then
+it consumes time.
+
+Applications:
+
+1.  Finding the Shortest Path.
+2.  Checking graph with petiteness.
+3.  Copying Cheney's Algorithm.
+
+2) AIM: How do you implement depth-first search in python?
+
+    graph = {
+      's' : ['a','b','c'],
+      'a' : ['d'],
+      'b' : ['d'],
+      'c' : ['d'],
+      'd' : []
+    }
+
+    visited = []
+
+    def dfs(visited, graph, node): 
+        if node not in visited:
+            print (node,end=" ")
+            visited.append(node)
+            for neighbour in graph[node]:
+                dfs(visited, graph, neighbour)
+
+    dfs(visited, graph, 's')
+
+    s a d b c 
+
+INFERENCE: Depth first search is an interesting algorithm, and as you
+might suspect, it is particularly well suited for inspecting if a graph
+is connected; if the tree returned by depth first search contains all
+vertices in the graph, it is connected, otherwise, it is not.
+
+Advantages:
+
+1.  The memory requirement is Linear WRT Nodes.
+2.  Less time and space complexity rather than BFS.
+3.  The solution can be found out without much more search.
+
+Disadvantages:
+
+1.  Not Guaranteed that it will give you a solution.
+2.  Cut-off depth is smaller so time complexity is more.
+3.  Determination of depth until the search has proceeded.
+
+Applications:
+
+1.  Finding Connected components.
+2.  Topological sorting.
+3.  Finding Bridges of the graph
