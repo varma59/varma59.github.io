@@ -1,29 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <title>G V S Abhishek Varma</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>G V S Abhishek Varma - Portfolio</title>
+  <meta name="description" content="Portfolio of G V S Abhishek Varma - AWS Certified Solutions Architect, Microsoft Student Ambassador, Cloud Computing Specialist.">
+  <meta name="keywords" content="G V S Abhishek Varma, AWS Certified, Azure Certified, Microsoft Student Ambassador, Cloud Computing, Data Science, Security, Portfolio">
+  <style>
+    /* General reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Background & Font */
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #8e44ad, #3498db, #2ecc71);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
+      color: #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Dark Mode */
+    .dark-mode {
+      background: linear-gradient(135deg, #2c3e50, #34495e, #1abc9c);
+      color: #f0f0f0;
+    }
+
+    /* Main Container */
+    .container {
+      display: flex;
+      flex-direction: row;
+      width: 95%;
+      max-width: 1100px;
+      padding: 30px;
+      margin: 0 auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      height: 95vh;
+      overflow-y: hidden;
+    }
+
+    /* Left Section */
+    .left-section {
+      width: 45%;
+      padding-right: 20px;
+      text-align: center;
+    }
+
+    .profile-image {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .name-title {
+      font-size: 2em;
+      color: black;
+      margin-bottom: 10px;
+    }
+
+    .contact {
+      font-size: 1em;
+      color: black;
+    }
+
+    .resume-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 0.9em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      display: inline-block;
+      margin-top: 15px;
+    }
+
+    .resume-button:hover {
+      background-color: #45a049;
+    }
+
+    /* Right Section (Resume Viewer) */
+    .right-section {
+      width: 55%;
+    }
+
+    .resume-viewer {
+      width: 100%;
+      height: 100%;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Dark Mode Toggle */
+    .toggle-container {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .toggle-button {
+      padding: 8px 12px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .toggle-button:hover {
+      background-color: #45a049;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    footer a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-    <div class="grid-2">
-        <div class="section-1">
-            <i class="fas fa-code fa-5x white"></i>
-            <h2>G V S Abhishek Varma</h2>
-            <p>India</p>
-            <a href="https://www.linkedin.com/in/varma59/"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/varma59"><i class="fab fa-github"></i></a>
-        </div>
-        <div class="section-2">
-            <h2>About</h2>
-            <p>Data-Driven Cloud Architect and Backend Developer with a strong focus on Python, SQL, and Cloud</p>
-            <button type="button" onclick="window.location.href='/Resume.pdf'">Download Resume</button>
-            <h2>Contact</h2>
-            <a href="mailto:abhishekvarma.gvs@outlook.com">Click Here</a>
-        </div>
+
+<!-- Dark Mode Toggle Button -->
+<div class="toggle-container">
+  <button id="toggle-button" class="toggle-button" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+</div>
+
+<div class="container">
+  <!-- Left Section -->
+  <div class="left-section">
+    <img src="https://raw.githubusercontent.com/varma59/varma59.github.io/refs/heads/main/varma59.png" alt="Profile Picture" class="profile-image">
+    <h1 class="name-title">G V S Abhishek Varma</h1>
+    <p class="contact">📧 <a href="mailto:abhishekvarma.gvs@outlook.com" style="color: black;">abhishekvarma.gvs@outlook.com</a></p>
+
+    <!-- Social Links -->
+    <div style="margin-top: 10px;">
+      <a href="https://www.linkedin.com/in/varma59" target="_blank" style="color: black; text-decoration: none; font-size: 1.2em; margin-right: 10px;">🔗 LinkedIn</a>
+      <a href="https://github.com/varma59" target="_blank" style="color: black; text-decoration: none; font-size: 1.2em; margin-right: 10px;">🐙 GitHub</a>
+      <a href="https://scholar.google.com/citations?user=Hd0d48YAAAAJ&hl=en" target="_blank" style="color: black; text-decoration: none; font-size: 1.2em;">📘 Google Scholar</a>
     </div>
+
+    <button class="resume-button" onclick="window.open('https://varma59.github.io/resume.pdf', '_blank')">📄 Download Resume</button>
+
+    <h2>About Me</h2>
+    <p>AWS Certified Solutions Architect, Microsoft Student Ambassador, and Amazon ML School 2023 graduate. Skilled in Python, SQL, R, Java, NoSQL, and certified in AWS, Azure, and Security Analysis. My passion lies in Cloud Computing, Data Science, and Research.</p>
+
+    <h2>Technical Skills</h2>
+    <p style="color: black;"><strong>Certifications:</strong> AWS | Azure | Security Analyst<br>
+      <strong>Programming Languages:</strong> Python, R, Java, SQL, NoSQL<br>
+      <strong>Tools:</strong> Git, Wireshark, Docker, MongoDB<br>
+      <strong>Platforms:</strong> AWS, Microsoft Azure, GCP<br>
+      <strong>Cloud Services:</strong> S3, EC2, IAM, CloudFront, Route53, Lambda</p>
+  </div>
+
+  <!-- Right Section: Resume Viewer -->
+  <div class="right-section">
+    <iframe src="https://varma59.github.io/resume.pdf" class="resume-viewer" title="Resume PDF Viewer" style="width: 100%; height: 100%; border: none;"></iframe>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  © 2024 G V S Abhishek Varma | <a href="mailto:abhishekvarma.gvs@outlook.com">Contact Me</a>
+</footer>
+
+<script>
+  // Dark Mode Toggle Function
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    const button = document.getElementById("toggle-button");
+    if (document.body.classList.contains("dark-mode")) {
+      button.innerHTML = "☀️ Light Mode";
+    } else {
+      button.innerHTML = "🌙 Dark Mode";
+    }
+  }
+</script>
+
 </body>
 </html>
